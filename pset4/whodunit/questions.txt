@@ -1,0 +1,25 @@
+1. What’s stdint.h?
+   It is a header file that allows to write a more portable code by providing a set of typedefs that specify exact-width integer types instead of using complex type names.
+2. What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+   To declare names (aliases) for existing exact-width integer types for signed (int32_t) and unsigned(others) integers instead of using complex names every time.
+3. How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+   BYTE = 1 byte, DWORD = 4 bytes, LONG = 4 bytes, WORD = 2 bytes.
+4. What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to identify file formats (with high probability) are generally called "magic numbers."
+   42 4D
+5. What’s the difference between bfSize and biSize?
+   bfSize - the size, in bytes, of the bitmap file with pixels, paddings and headers, biSize - size, in bytes, of the image including pixels and paddings, but not the headers.
+   bf.bfSize = bi.biSizeImage + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER).
+6. What does it mean if biHeight is negative?
+   It means that the bitmap is stored  with each bitmap’s top row first and bottom row last, top todown, left to right.
+7. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+   biBitCount
+8. Why might fopen return NULL in lines 24 and 32 of copy.c?
+   If fopen failed to open the file. Because there isn't enough memory or file simply couldn't be found.
+9. Why is the third argument to fread always 1 in our code?
+   It says the program to read the files one structure at a time. 
+10.What value does line 65 of copy.c assign to padding if bi.biWidth is 3?
+   3
+11.What does fseek do?
+   It sets file position, goes forward changing the current position of the file's pointer(inptr) for as many bytes as in the variable padding.
+12.What is SEEK_CUR?
+   Current position of the file's pointer.
